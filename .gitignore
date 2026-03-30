@@ -27,3 +27,6 @@ Thumbs.db
 
 # Logs (optional — remove if you want to track logs)
 # outputs/logs/
+outputs/*.csv
+paysim.csv
+*.db
