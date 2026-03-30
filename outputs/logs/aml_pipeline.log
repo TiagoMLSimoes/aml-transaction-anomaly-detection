@@ -1,0 +1,233 @@
+2026-03-30 18:19:12 [INFO] ============================================================
+2026-03-30 18:19:12 [INFO] AML TRANSACTION ANOMALY DETECTION PIPELINE — v2.0 (Senior)
+2026-03-30 18:19:12 [INFO] ============================================================
+2026-03-30 18:19:12 [INFO] ✅ Validação do dataset: OK
+2026-03-30 18:19:12 [INFO] 
+[1/6] Carregando dados...
+2026-03-30 18:19:12 [INFO] A carregar dataset: paysim.csv
+2026-03-30 18:19:13 [INFO]    Linhas carregadas: 500,000
+2026-03-30 18:19:13 [INFO]    Colunas: ['step', 'type', 'amount', 'nameOrig', 'oldbalanceOrg', 'newbalanceOrig', 'nameDest', 'oldbalanceDest', 'newbalanceDest', 'isFraud', 'isFlaggedFraud']
+2026-03-30 18:19:13 [INFO]    Memória utilizada: 77.2 MB
+2026-03-30 18:19:13 [INFO]    Taxa de fraude real: 0.0466%
+2026-03-30 18:19:13 [INFO] 
+[2/6] Carregando para SQLite...
+2026-03-30 18:19:13 [INFO] A carregar dados para SQLite: aml_transactions.db
+2026-03-30 18:19:13 [INFO]    Tabela 'transactions' criada: 500,000 registos
+2026-03-30 18:19:13 [INFO] 
+[3/6] Calculando features...
+2026-03-30 18:19:13 [INFO] A calcular features comportamentais via SQL...
+2026-03-30 18:22:25 [INFO] ============================================================
+2026-03-30 18:22:25 [INFO] AML TRANSACTION ANOMALY DETECTION PIPELINE — v2.0 (Senior)
+2026-03-30 18:22:25 [INFO] ============================================================
+2026-03-30 18:22:25 [INFO] ✅ Validação do dataset: OK
+2026-03-30 18:22:25 [INFO] 
+[1/6] Carregando dados...
+2026-03-30 18:22:25 [INFO] A carregar dataset: paysim.csv
+2026-03-30 18:22:26 [INFO]    Linhas carregadas: 500,000
+2026-03-30 18:22:26 [INFO]    Colunas: ['step', 'type', 'amount', 'nameOrig', 'oldbalanceOrg', 'newbalanceOrig', 'nameDest', 'oldbalanceDest', 'newbalanceDest', 'isFraud', 'isFlaggedFraud']
+2026-03-30 18:22:26 [INFO]    Memória utilizada: 77.2 MB
+2026-03-30 18:22:26 [INFO]    Taxa de fraude real: 0.0466%
+2026-03-30 18:22:26 [INFO] 
+[2/6] Carregando para SQLite...
+2026-03-30 18:22:26 [INFO] A carregar dados para SQLite: aml_transactions.db
+2026-03-30 18:22:26 [INFO]    Tabela 'transactions' criada: 500,000 registos
+2026-03-30 18:22:26 [INFO] 
+[3/6] Calculando features...
+2026-03-30 18:22:26 [INFO] A calcular features comportamentais via SQL...
+2026-03-30 18:22:27 [INFO]    Features calculadas: 47 clientes
+2026-03-30 18:22:27 [INFO]    Dimensão da matriz: 47 × 11 features
+2026-03-30 18:22:27 [INFO] 
+[4/6] Pré-processando para modelo ML...
+2026-03-30 18:22:27 [INFO] A pré-processar features para o modelo...
+2026-03-30 18:22:27 [INFO]    Shape: 47 clientes × 11 features
+2026-03-30 18:22:27 [INFO]    Após normalização: média=0.0000, std=0.9045
+2026-03-30 18:22:27 [INFO] 
+[5/6] Treinando modelo e gerando alertas...
+2026-03-30 18:22:27 [INFO] A treinar Isolation Forest (200 árvores)...
+2026-03-30 18:22:27 [INFO]    Clientes analisados: 47
+2026-03-30 18:22:27 [INFO]    Anomalias detectadas: 1 (2.13%)
+2026-03-30 18:22:27 [INFO] A validar modelo contra labels reais de fraude...
+2026-03-30 18:22:27 [INFO]    Nota: 0 fraudes reais nos alertas — normal para amostras pequenas.
+2026-03-30 18:22:27 [INFO]    A taxa de fraude real no PaySim é <0.1% do dataset completo.
+2026-03-30 18:22:27 [INFO] 
+[6/6] Gerando visualizações...
+2026-03-30 18:22:27 [INFO] A gerar visualizações...
+2026-03-30 18:22:29 [INFO]    Gráfico 'main_analysis': outputs/charts/aml_analysis_charts.png
+2026-03-30 18:22:29 [INFO]    Gráfico 'correlation_heatmap': outputs/charts/feature_correlation_heatmap.png
+2026-03-30 18:22:29 [INFO] 
+============================================================
+2026-03-30 18:22:29 [INFO] RELATÓRIO FINAL
+2026-03-30 18:22:29 [INFO] ============================================================
+2026-03-30 18:22:29 [INFO] Total de clientes analisados:           47
+2026-03-30 18:22:29 [INFO] Clientes normais:                       46
+2026-03-30 18:22:29 [INFO] Alertas gerados:                         1
+2026-03-30 18:22:29 [INFO]   → HIGH:                                1
+2026-03-30 18:22:29 [INFO]   → MEDIUM:                              0
+2026-03-30 18:22:29 [INFO]   → LOW:                                 0
+2026-03-30 18:22:29 [INFO] 
+Ficheiros exportados:
+2026-03-30 18:22:29 [INFO]   → alerts: outputs/aml_alerts.csv
+2026-03-30 18:22:29 [INFO]   → full_results: outputs/full_results.csv
+2026-03-30 18:22:29 [INFO] 
+✅ Pipeline concluído com sucesso.
+2026-03-30 18:29:39 [INFO] ============================================================
+2026-03-30 18:29:39 [INFO] AML TRANSACTION ANOMALY DETECTION PIPELINE — v2.0 (Senior)
+2026-03-30 18:29:39 [INFO] ============================================================
+2026-03-30 18:29:39 [INFO] ✅ Validação do dataset: OK
+2026-03-30 18:29:39 [INFO] 
+[1/6] Carregando dados...
+2026-03-30 18:29:39 [INFO] A carregar dataset: paysim.csv
+2026-03-30 18:29:39 [INFO]    Linhas carregadas: 500,000
+2026-03-30 18:29:39 [INFO]    Colunas: ['step', 'type', 'amount', 'nameOrig', 'oldbalanceOrg', 'newbalanceOrig', 'nameDest', 'oldbalanceDest', 'newbalanceDest', 'isFraud', 'isFlaggedFraud']
+2026-03-30 18:29:39 [INFO]    Memória utilizada: 77.2 MB
+2026-03-30 18:29:39 [INFO]    Taxa de fraude real: 0.0466%
+2026-03-30 18:29:39 [INFO] 
+[2/6] Carregando para SQLite...
+2026-03-30 18:29:39 [INFO] A carregar dados para SQLite: aml_transactions.db
+2026-03-30 18:29:40 [INFO]    Tabela 'transactions' criada: 500,000 registos
+2026-03-30 18:29:40 [INFO] 
+[3/6] Calculando features...
+2026-03-30 18:29:40 [INFO] A calcular features comportamentais via SQL...
+2026-03-30 18:29:40 [INFO]    Features calculadas: 47 clientes
+2026-03-30 18:29:40 [INFO]    Dimensão da matriz: 47 × 11 features
+2026-03-30 18:29:40 [INFO] 
+[4/6] Pré-processando para modelo ML...
+2026-03-30 18:29:40 [INFO] A pré-processar features para o modelo...
+2026-03-30 18:29:40 [INFO]    Shape: 47 clientes × 11 features
+2026-03-30 18:29:40 [INFO]    Após normalização: média=0.0000, std=0.9045
+2026-03-30 18:29:40 [INFO] 
+[5/6] Treinando modelo e gerando alertas...
+2026-03-30 18:29:40 [INFO] A treinar Isolation Forest (200 árvores)...
+2026-03-30 18:29:41 [INFO]    Clientes analisados: 47
+2026-03-30 18:29:41 [INFO]    Anomalias detectadas: 1 (2.13%)
+2026-03-30 18:29:41 [INFO] A validar modelo contra labels reais de fraude...
+2026-03-30 18:29:41 [INFO]    Nota: 0 fraudes reais nos alertas — normal para amostras pequenas.
+2026-03-30 18:29:41 [INFO]    A taxa de fraude real no PaySim é <0.1% do dataset completo.
+2026-03-30 18:29:41 [INFO] 
+[6/6] Gerando visualizações...
+2026-03-30 18:29:41 [INFO] A gerar visualizações...
+2026-03-30 18:29:42 [INFO]    Gráfico 'main_analysis': outputs/charts/aml_analysis_charts.png
+2026-03-30 18:29:42 [INFO]    Gráfico 'correlation_heatmap': outputs/charts/feature_correlation_heatmap.png
+2026-03-30 18:29:42 [INFO] 
+============================================================
+2026-03-30 18:29:42 [INFO] RELATÓRIO FINAL
+2026-03-30 18:29:42 [INFO] ============================================================
+2026-03-30 18:29:42 [INFO] Total de clientes analisados:           47
+2026-03-30 18:29:42 [INFO] Clientes normais:                       46
+2026-03-30 18:29:42 [INFO] Alertas gerados:                         1
+2026-03-30 18:29:42 [INFO]   → HIGH:                                1
+2026-03-30 18:29:42 [INFO]   → MEDIUM:                              0
+2026-03-30 18:29:42 [INFO]   → LOW:                                 0
+2026-03-30 18:29:42 [INFO] 
+Ficheiros exportados:
+2026-03-30 18:29:42 [INFO]   → alerts: outputs/aml_alerts.csv
+2026-03-30 18:29:42 [INFO]   → full_results: outputs/full_results.csv
+2026-03-30 18:29:42 [INFO] 
+✅ Pipeline concluído com sucesso.
+2026-03-30 18:32:17 [INFO] ============================================================
+2026-03-30 18:32:17 [INFO] AML TRANSACTION ANOMALY DETECTION PIPELINE — v2.0 (Senior)
+2026-03-30 18:32:17 [INFO] ============================================================
+2026-03-30 18:32:17 [INFO] ✅ Validação do dataset: OK
+2026-03-30 18:32:17 [INFO] 
+[1/6] Carregando dados...
+2026-03-30 18:32:17 [INFO] A carregar dataset: paysim.csv
+2026-03-30 18:32:18 [INFO]    Linhas carregadas: 500,000
+2026-03-30 18:32:18 [INFO]    Colunas: ['step', 'type', 'amount', 'nameOrig', 'oldbalanceOrg', 'newbalanceOrig', 'nameDest', 'oldbalanceDest', 'newbalanceDest', 'isFraud', 'isFlaggedFraud']
+2026-03-30 18:32:18 [INFO]    Memória utilizada: 77.2 MB
+2026-03-30 18:32:18 [INFO]    Taxa de fraude real: 0.0466%
+2026-03-30 18:32:18 [INFO] 
+[2/6] Carregando para SQLite...
+2026-03-30 18:32:18 [INFO] A carregar dados para SQLite: aml_transactions.db
+2026-03-30 18:32:18 [INFO]    Tabela 'transactions' criada: 500,000 registos
+2026-03-30 18:32:18 [INFO] 
+[3/6] Calculando features...
+2026-03-30 18:32:18 [INFO] A calcular features comportamentais via SQL...
+2026-03-30 18:32:19 [INFO]    Features calculadas: 47 clientes
+2026-03-30 18:32:19 [INFO]    Dimensão da matriz: 47 × 11 features
+2026-03-30 18:32:19 [INFO] 
+[4/6] Pré-processando para modelo ML...
+2026-03-30 18:32:19 [INFO] A pré-processar features para o modelo...
+2026-03-30 18:32:19 [INFO]    Shape: 47 clientes × 11 features
+2026-03-30 18:32:19 [INFO]    Após normalização: média=0.0000, std=0.9045
+2026-03-30 18:32:19 [INFO] 
+[5/6] Treinando modelo e gerando alertas...
+2026-03-30 18:32:19 [INFO] A treinar Isolation Forest (200 árvores)...
+2026-03-30 18:32:19 [INFO]    Clientes analisados: 47
+2026-03-30 18:32:19 [INFO]    Anomalias detectadas: 1 (2.13%)
+2026-03-30 18:32:19 [INFO] A validar modelo contra labels reais de fraude...
+2026-03-30 18:32:19 [INFO]    Nota: 0 fraudes reais nos alertas — normal para amostras pequenas.
+2026-03-30 18:32:19 [INFO]    A taxa de fraude real no PaySim é <0.1% do dataset completo.
+2026-03-30 18:32:19 [INFO] 
+[6/6] Gerando visualizações...
+2026-03-30 18:32:19 [INFO] A gerar visualizações...
+2026-03-30 18:32:20 [INFO]    Gráfico 'main_analysis': outputs/charts/aml_analysis_charts.png
+2026-03-30 18:32:20 [INFO]    Gráfico 'correlation_heatmap': outputs/charts/feature_correlation_heatmap.png
+2026-03-30 18:32:20 [INFO] 
+============================================================
+2026-03-30 18:32:20 [INFO] RELATÓRIO FINAL
+2026-03-30 18:32:20 [INFO] ============================================================
+2026-03-30 18:32:20 [INFO] Total de clientes analisados:           47
+2026-03-30 18:32:20 [INFO] Clientes normais:                       46
+2026-03-30 18:32:20 [INFO] Alertas gerados:                         1
+2026-03-30 18:32:20 [INFO]   → HIGH:                                1
+2026-03-30 18:32:20 [INFO]   → MEDIUM:                              0
+2026-03-30 18:32:20 [INFO]   → LOW:                                 0
+2026-03-30 18:32:20 [INFO] 
+Ficheiros exportados:
+2026-03-30 18:32:20 [INFO]   → alerts: outputs/aml_alerts.csv
+2026-03-30 18:32:20 [INFO]   → full_results: outputs/full_results.csv
+2026-03-30 18:32:20 [INFO] 
+✅ Pipeline concluído com sucesso.
+2026-03-30 18:36:46 [INFO] ============================================================
+2026-03-30 18:36:46 [INFO] AML TRANSACTION ANOMALY DETECTION PIPELINE — v2.0 (Senior)
+2026-03-30 18:36:46 [INFO] ============================================================
+2026-03-30 18:36:46 [INFO] ✅ Validação do dataset: OK
+2026-03-30 18:36:46 [INFO] 
+[1/6] Carregando dados...
+2026-03-30 18:36:46 [INFO] A carregar dataset: paysim.csv
+2026-03-30 18:36:47 [INFO]    Linhas carregadas: 500,000
+2026-03-30 18:36:47 [INFO]    Colunas: ['step', 'type', 'amount', 'nameOrig', 'oldbalanceOrg', 'newbalanceOrig', 'nameDest', 'oldbalanceDest', 'newbalanceDest', 'isFraud', 'isFlaggedFraud']
+2026-03-30 18:36:47 [INFO]    Memória utilizada: 77.2 MB
+2026-03-30 18:36:47 [INFO]    Taxa de fraude real: 0.0466%
+2026-03-30 18:36:47 [INFO] 
+[2/6] Carregando para SQLite...
+2026-03-30 18:36:47 [INFO] A carregar dados para SQLite: aml_transactions.db
+2026-03-30 18:36:47 [INFO]    Tabela 'transactions' criada: 500,000 registos
+2026-03-30 18:36:47 [INFO] 
+[3/6] Calculando features...
+2026-03-30 18:36:47 [INFO] A calcular features comportamentais via SQL...
+2026-03-30 18:36:49 [INFO]    Features calculadas: 499,953 clientes
+2026-03-30 18:36:49 [INFO]    Dimensão da matriz: 499953 × 11 features
+2026-03-30 18:36:49 [INFO] 
+[4/6] Pré-processando para modelo ML...
+2026-03-30 18:36:49 [INFO] A pré-processar features para o modelo...
+2026-03-30 18:36:49 [INFO]    Shape: 499,953 clientes × 11 features
+2026-03-30 18:36:49 [INFO]    Após normalização: média=0.0000, std=1.0000
+2026-03-30 18:36:49 [INFO] 
+[5/6] Treinando modelo e gerando alertas...
+2026-03-30 18:36:49 [INFO] A treinar Isolation Forest (200 árvores)...
+2026-03-30 18:36:55 [INFO]    Clientes analisados: 499,953
+2026-03-30 18:36:55 [INFO]    Anomalias detectadas: 5,000 (1.00%)
+2026-03-30 18:36:55 [INFO] A validar modelo contra labels reais de fraude...
+2026-03-30 18:36:55 [INFO]    Precision: 1.30% (65 fraudes reais em 5000 alertas)
+2026-03-30 18:36:55 [INFO] 
+[6/6] Gerando visualizações...
+2026-03-30 18:36:55 [INFO] A gerar visualizações...
+2026-03-30 18:36:58 [INFO]    Gráfico 'main_analysis': outputs/charts/aml_analysis_charts.png
+2026-03-30 18:36:58 [INFO]    Gráfico 'correlation_heatmap': outputs/charts/feature_correlation_heatmap.png
+2026-03-30 18:37:00 [INFO] 
+============================================================
+2026-03-30 18:37:00 [INFO] RELATÓRIO FINAL
+2026-03-30 18:37:00 [INFO] ============================================================
+2026-03-30 18:37:00 [INFO] Total de clientes analisados:      499,953
+2026-03-30 18:37:00 [INFO] Clientes normais:                  494,953
+2026-03-30 18:37:00 [INFO] Alertas gerados:                     5,000
+2026-03-30 18:37:00 [INFO]   → HIGH:                            1,251
+2026-03-30 18:37:00 [INFO]   → MEDIUM:                          2,499
+2026-03-30 18:37:00 [INFO]   → LOW:                             1,250
+2026-03-30 18:37:00 [INFO] 
+Ficheiros exportados:
+2026-03-30 18:37:00 [INFO]   → alerts: outputs/aml_alerts.csv
+2026-03-30 18:37:00 [INFO]   → full_results: outputs/full_results.csv
+2026-03-30 18:37:00 [INFO] 
+✅ Pipeline concluído com sucesso.
